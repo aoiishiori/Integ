@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerLog>
+  <LogEntry>
+    <timestamp>2026-02-15 23:24:55</timestamp>
+    <user>SYSTEM</user>
+    <action>SERVER_START</action>
+    <dataAffected>port=5000</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:41</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:41</timestamp>
+    <user>shiow</user>
+    <action>REGISTER</action>
+    <dataAffected>role=BUYER, status=APPROVED</dataAffected>
+    <result>SUCCESS</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:41</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>shiow</user>
+    <action>LOGIN</action>
+    <dataAffected>role=BUYER</dataAffected>
+    <result>SUCCESS</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>shiow</user>
+    <action>FETCH_ALL_PRODUCTS</action>
+    <dataAffected>N/A</dataAffected>
+    <result>SUCCESS</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:25:48</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:26:19</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:26:19</timestamp>
+    <user>shiow_seller</user>
+    <action>REGISTER</action>
+    <dataAffected>role=SELLER, status=PENDING</dataAffected>
+    <result>SUCCESS</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:26:19</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:28:08</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:28:08</timestamp>
+    <user>shiow</user>
+    <action>FETCH_MY_PURCHASES</action>
+    <dataAffected>N/A</dataAffected>
+    <result>SUCCESS</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:28:08</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:29:24</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:29:24</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:29:26</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_CONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+  <LogEntry>
+    <timestamp>2026-02-15 23:29:26</timestamp>
+    <user>127.0.0.1</user>
+    <action>CLIENT_DISCONNECT</action>
+    <dataAffected>N/A</dataAffected>
+    <result>N/A</result>
+  </LogEntry>
+</ServerLog>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Accounts>
+  <Account>
+    <accountId>ACC-72CF025C</accountId>
+    <username>shiow</username>
+    <password>123456</password>
+    <role>BUYER</role>
+    <status>APPROVED</status>
+  </Account>
+  <Account>
+    <accountId>ACC-A02BD8FA</accountId>
+    <username>shiow_seller</username>
+    <password>changeme123</password>
+    <role>SELLER</role>
+    <status>PENDING</status>
+  </Account>
+</Accounts>
