@@ -1,0 +1,23 @@
+Para sa Add Maven Dependency... na lalabas sa import
+
+(1) --- Generate Files
+
+- Go to the Maven tab on the right side of IntelliJ.
+- Expand drop down for wordy -> Lifecycle
+- Double-click compile.
+[Optional]
+- Double-click clean (wait until done)
+- Double-click compile
+
+
+(2) --- Mark the folder as "Source"
+
+- In the top menu bar, click File (4 Horizontal Lines Icon) → Project Structure... (or press Ctrl + Alt + Shift + S).
+- On the left pane, click Modules.
+- On the right pane, click the Sources tab. (wordy should be highlighted in blue)
+- Look at the folder tree below. Expand wordy → target → generated-sources → protobuf.
+
+- Skip this (Old- You will see a folder named java. Click on it once to highlight it.)
+
+- Right at the top of that window, click the blue "Sources" button (it has a blue folder icon). The protobuf folder should turn blue in the tree. // Changed java to protobuf
+- Click Apply, then click OK.

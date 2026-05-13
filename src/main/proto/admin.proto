@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package wordy;
+
+option java_package = "com.team2.wordy.proto";
+option java_outer_classname = "AdminProto";
+option java_multiple_files = true;
+
+// ── Import shared messages from common.proto ───
+import "common.proto";
+
+// ─────────────────────────────────────────────
+//  ADMIN SERVICE  (updated per professor feedback)
+//
+//  - ReadPlayer renamed to GetAllPlayers
+//  - GetAllPlayers returns ALL players (no ID filter)
+//  - PlayerRecord moved to common.proto (shared)
+// ─────────────────────────────────────────────
+
+service AdminService {
+
+  // ── Player CRUD+Search ───────────────────────
+
+  rpc CreatePlayer  (CreatePlayerRequest)  returns (CreatePlayerResponse);
+
+  // READ — returns ALL players in the database (professor requirement)
+  rpc GetAllPlayers (GetAllPlayersRequest) returns (GetAllPlayersResponse);
+
+  rpc UpdatePlayer  (UpdatePlayerRequest)  returns (UpdatePlayerResponse);
+  rpc DeletePlayer  (DeletePlayerRequest)  returns (DeletePlayerResponse);
+  rpc SearchPlayer  (SearchPlayerRequest)  returns (SearchPlayerResponse);
+
+  // ── Time Configuration ───────────────────────
+
+  rpc GetTimeConfig (GetTimeConfigRequest) returns (GetTimeConfigResponse);
+  rpc SetTimeConfig (SetTimeConfigRequest) returns (SetTimeConfigResponse);
+}
+
+// ── Create ─────────────────────────────────────
+
+message CreatePlayerRequest {
+  string admin_token = 1;  // must be an ADMIN session token
+  string username    = 2;
+  string password    = 3;  // plaintext; server hashes before storing
+  string role        = 4;  // "PLAYER" | "ADMIN"
+}
+
+message CreatePlayerResponse {
+  bool         success = 1;
+  string       message = 2;  // "Player created" | "Username already exists"
+  PlayerRecord player  = 3;  // PlayerRecord imported from common.proto
+}
+
+// ── Read (all players) ─────────────────────────
+// Professor requirement: Read must return ALL players.
+
+message GetAllPlayersRequest {
+  string admin_token    = 1;
+  bool include_archived = 2;
+}
+
+message GetAllPlayersResponse {
+  bool                  success = 1;
+  string                message = 2;
+  repeated PlayerRecord players = 3;  // ALL players in the database
+}
+
+// ── Update ─────────────────────────────────────
+
+message UpdatePlayerRequest {
+  string admin_token  = 1;
+  int32  player_id    = 2;
+  string new_username = 3;  // leave empty to keep current
+  string new_password = 4;  // leave empty to keep current
+  string new_role     = 5;  // leave empty to keep current
+  bool active         = 6;
+}
+
+message UpdatePlayerResponse {
+  bool         success = 1;
+  string       message = 2;
+  PlayerRecord player  = 3;  // updated record — imported from common.proto
+}
+
+// ── Delete ─────────────────────────────────────
+
+message DeletePlayerRequest {
+  string admin_token = 1;
+  int32  player_id   = 2;
+}
+
+message DeletePlayerResponse {
+  bool   success = 1;
+  string message = 2;  // "Player deleted" | "Player not found"
+}
+
+// ── Search ─────────────────────────────────────
+
+message SearchPlayerRequest {
+  string admin_token    = 1;
+  string query          = 2;  // partial or full username — server does LIKE query
+  bool include_archived = 3;
+}
+
+message SearchPlayerResponse {
+  bool                  success = 1;
+  string                message = 2;
+  repeated PlayerRecord players = 3;  // all matching results
+}
+
+// ── Time Config ────────────────────────────────
+
+message GetTimeConfigRequest {
+  string admin_token = 1;
+}
+
+message GetTimeConfigResponse {
+  bool   success                = 1;
+  int32  join_wait_seconds      = 2;  // default: 10
+  int32  round_duration_seconds = 3;  // default: 30
+}
+
+message SetTimeConfigRequest {
+  string admin_token            = 1;
+  int32  join_wait_seconds      = 2;  // 0 = keep current value
+  int32  round_duration_seconds = 3;  // 0 = keep current value
+}
+
+message SetTimeConfigResponse {
+  bool   success                = 1;
+  string message                = 2;  // "Configuration updated"
+  int32  join_wait_seconds      = 3;  // confirmed new value
+  int32  round_duration_seconds = 4;  // confirmed new value
+}
